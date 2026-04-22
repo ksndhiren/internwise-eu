@@ -5,6 +5,7 @@ import SmartCards from "@/components/internwise/SmartCards";
 import Stats from "@/components/internwise/Stats";
 import ProductPreview from "@/components/internwise/ProductPreview";
 import FinalCta from "@/components/internwise/FinalCta";
+import Footer from "@/components/internwise/Footer";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
       <Stats />
       <ProductPreview />
       <FinalCta />
+      <Footer />
     </main>
   );
 };
