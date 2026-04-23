@@ -136,17 +136,20 @@ const SmartCards = () => {
         className="absolute inset-0 opacity-20"
         style={{ background: "radial-gradient(circle at 80% 20%, hsl(209 73% 80% / 0.4), transparent 50%)" }}
       />
-      <div className="container mx-auto relative grid lg:grid-cols-[1fr_2fr] gap-12 items-center">
-        <div className="text-white">
-          <div className="text-xs font-semibold tracking-widest text-white/70 mb-4">
+      <div className="container mx-auto relative grid lg:grid-cols-[0.9fr_2.1fr] gap-14 items-center">
+        <div className="max-w-md text-white">
+          <div className="text-xs font-semibold tracking-widest text-white/70 mb-5">
             SMART CARDS. SMARTER HIRING.
           </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-8">
+          <h2 className="text-4xl md:text-5xl font-extrabold leading-[1.08] mb-6 text-balance">
             See beyond the CV.
             <br />
             See the potential.
           </h2>
-          <ul className="space-y-3 mb-8">
+          <p className="mb-8 max-w-sm text-base leading-7 text-white/78">
+            Rich candidate summaries make strengths, context, and fit easier to understand at a glance.
+          </p>
+          <ul className="space-y-3 mb-9">
             {features.map((feature) => (
               <li key={feature} className="flex items-center gap-3 text-white/90">
                 <CheckCircle2 className="w-5 h-5 text-primary-light" />

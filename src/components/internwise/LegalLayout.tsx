@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Navbar from "@/components/internwise/Navbar";
 
 type Section = {
   title: string;
@@ -15,20 +15,9 @@ type LegalLayoutProps = {
 const LegalLayout = ({ title, intro, sections }: LegalLayoutProps) => {
   return (
     <main className="min-h-screen bg-background">
-      <header className="border-b border-border/60 bg-white/95 backdrop-blur">
-        <div className="container mx-auto flex items-center justify-between py-5">
-          <Link to="/" className="flex items-center">
-            <img src="/logo.png" alt="Internwise Europe" className="h-12 w-auto" />
-          </Link>
-          <nav className="flex items-center gap-6 text-sm font-medium text-muted-foreground">
-            <Link to="/" className="transition hover:text-primary">Home</Link>
-            <Link to="/terms" className="transition hover:text-primary">Terms</Link>
-            <Link to="/privacy" className="transition hover:text-primary">Privacy</Link>
-          </nav>
-        </div>
-      </header>
+      <Navbar variant="solid" />
 
-      <section className="container mx-auto py-16 lg:py-20">
+      <section className="container mx-auto pt-32 pb-16 lg:pt-36 lg:pb-20">
         <div className="max-w-4xl">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-primary">
             Internwise Policies
