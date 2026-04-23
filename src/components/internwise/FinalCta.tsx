@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check, BarChart3, Rocket } from "lucide-react";
+import SeeYourMatchesDialog from "@/components/internwise/SeeYourMatchesDialog";
 import sofia from "@/assets/avatar-sofia.jpg";
 import lukas from "@/assets/avatar-lukas.jpg";
 import marta from "@/assets/avatar-marta.jpg";
@@ -35,9 +36,11 @@ const FinalCta = () => {
           Your next opportunity<br />is just one <span className="text-gradient-orange">match</span> away.
         </h2>
         <div className="flex flex-wrap justify-center gap-4 mb-6">
-          <Button size="lg" className="bg-primary-gradient text-white hover:opacity-95 rounded-xl px-7 h-12 shadow-card-soft border-0">
-            Start Matching <ArrowRight className="ml-2 w-4 h-4" />
-          </Button>
+          <SeeYourMatchesDialog>
+            <Button size="lg" className="bg-primary-gradient text-white hover:opacity-95 rounded-xl px-7 h-12 shadow-card-soft border-0">
+              See Your Matches <ArrowRight className="ml-2 w-4 h-4" />
+            </Button>
+          </SeeYourMatchesDialog>
           <Button size="lg" className="bg-cta-gradient text-white hover:opacity-95 rounded-xl px-7 h-12 shadow-cta border-0">
             Hire Talent <ArrowRight className="ml-2 w-4 h-4" />
           </Button>

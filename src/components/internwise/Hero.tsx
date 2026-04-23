@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Briefcase, Check, Code2, LineChart, Megaphone, Palette, Star } from "lucide-react";
+import SeeYourMatchesDialog from "@/components/internwise/SeeYourMatchesDialog";
 import sofia from "@/assets/avatar-sofia.jpg";
 import lukas from "@/assets/avatar-lukas.jpg";
 import marta from "@/assets/avatar-marta.jpg";
@@ -170,9 +171,11 @@ const Hero = () => {
             matching. Better outcomes.
           </p>
           <div className="flex flex-wrap gap-4 mb-10">
-            <Button size="lg" className="bg-primary-gradient text-white hover:opacity-95 rounded-xl px-6 h-12 shadow-card-soft border-0 group">
-              Start Matching <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition" />
-            </Button>
+            <SeeYourMatchesDialog>
+              <Button size="lg" className="bg-primary-gradient text-white hover:opacity-95 rounded-xl px-6 h-12 shadow-card-soft border-0 group">
+                See Your Matches <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition" />
+              </Button>
+            </SeeYourMatchesDialog>
             <Button size="lg" className="bg-cta-gradient text-white hover:opacity-95 rounded-xl px-6 h-12 shadow-cta border-0 group">
               I'm Hiring <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition" />
             </Button>
@@ -226,15 +229,16 @@ const Hero = () => {
                       key={`candidate-line-${index}`}
                       d={buildLeftPath(y)}
                       stroke="url(#candidateFlow)"
-                      strokeWidth={isActive ? 2.6 : 1.2}
+                      strokeWidth={isActive ? 3.4 : 1.1}
                       strokeLinecap="round"
+                      filter={isActive ? "url(#lineGlow)" : undefined}
                       initial={false}
                       animate={
                         reduceMotion
-                          ? { opacity: isActive ? 0.9 : 0.14, pathLength: 1 }
-                          : { opacity: isActive ? 0.95 : 0.14, pathLength: isActive ? 1 : 0.45 }
+                          ? { opacity: isActive ? 1 : 0.12, pathLength: 1 }
+                          : { opacity: isActive ? [0.82, 1, 0.9] : 0.12, pathLength: isActive ? 1 : 0.42 }
                       }
-                      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                      transition={{ duration: isActive ? 1.8 : 0.45, repeat: isActive && !reduceMotion ? Infinity : 0, ease: "easeInOut" }}
                     />
                   );
                 })}
@@ -247,30 +251,38 @@ const Hero = () => {
                       key={`job-line-${index}`}
                       d={buildRightPath(y)}
                       stroke="url(#jobFlow)"
-                      strokeWidth={isActive ? 2.6 : 1.2}
+                      strokeWidth={isActive ? 3.4 : 1.1}
                       strokeLinecap="round"
+                      filter={isActive ? "url(#lineGlow)" : undefined}
                       initial={false}
                       animate={
                         reduceMotion
-                          ? { opacity: isActive ? 0.9 : 0.14, pathLength: 1 }
-                          : { opacity: isActive ? 0.95 : 0.14, pathLength: isActive ? 1 : 0.45 }
+                          ? { opacity: isActive ? 1 : 0.12, pathLength: 1 }
+                          : { opacity: isActive ? [0.82, 1, 0.9] : 0.12, pathLength: isActive ? 1 : 0.42 }
                       }
-                      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                      transition={{ duration: isActive ? 1.8 : 0.45, repeat: isActive && !reduceMotion ? Infinity : 0, ease: "easeInOut" }}
                     />
                   );
                 })}
 
                 <defs>
                   <linearGradient id="candidateFlow" x1="274" y1="0" x2="450" y2="0" gradientUnits="userSpaceOnUse">
-                    <stop offset="0" stopColor="rgba(95,167,229,0.08)" />
-                    <stop offset="0.55" stopColor="rgba(95,167,229,0.95)" />
-                    <stop offset="1" stopColor="rgba(95,167,229,0.16)" />
+                    <stop offset="0" stopColor="rgba(95,167,229,0.18)" />
+                    <stop offset="0.55" stopColor="rgba(164,214,255,1)" />
+                    <stop offset="1" stopColor="rgba(95,167,229,0.32)" />
                   </linearGradient>
                   <linearGradient id="jobFlow" x1="626" y1="0" x2="450" y2="0" gradientUnits="userSpaceOnUse">
-                    <stop offset="0" stopColor="rgba(95,167,229,0.08)" />
-                    <stop offset="0.55" stopColor="rgba(95,167,229,0.95)" />
-                    <stop offset="1" stopColor="rgba(95,167,229,0.16)" />
+                    <stop offset="0" stopColor="rgba(95,167,229,0.18)" />
+                    <stop offset="0.55" stopColor="rgba(164,214,255,1)" />
+                    <stop offset="1" stopColor="rgba(95,167,229,0.32)" />
                   </linearGradient>
+                  <filter id="lineGlow" x="-30%" y="-30%" width="160%" height="160%">
+                    <feGaussianBlur stdDeviation="3.2" result="blur" />
+                    <feMerge>
+                      <feMergeNode in="blur" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
                 </defs>
               </svg>
 
@@ -301,8 +313,8 @@ const Hero = () => {
                         reduceMotion
                           ? undefined
                           : {
-                              boxShadow: isActive ? "0 0 28px rgba(95, 167, 229, 0.35)" : "0 12px 28px rgba(11, 23, 51, 0.18)",
-                              scale: isActive ? 1.02 : isBehindActive ? 0.978 : 0.99,
+                              boxShadow: isActive ? "0 0 0 1px rgba(164, 214, 255, 0.34), 0 0 36px rgba(95, 167, 229, 0.58), 0 18px 38px rgba(7, 19, 46, 0.26)" : "0 12px 28px rgba(11, 23, 51, 0.18)",
+                              scale: isActive ? 1.025 : isBehindActive ? 0.978 : 0.99,
                               filter: isActive ? "blur(0px)" : isBehindActive ? "blur(3px)" : "blur(0px)",
                             }
                       }
@@ -354,8 +366,8 @@ const Hero = () => {
                         reduceMotion
                           ? undefined
                           : {
-                              boxShadow: isActive ? "0 0 28px rgba(95, 167, 229, 0.35)" : "0 12px 28px rgba(11, 23, 51, 0.12)",
-                              scale: isActive ? 1.02 : isBehindActive ? 0.978 : 0.99,
+                              boxShadow: isActive ? "0 0 0 1px rgba(95, 167, 229, 0.32), 0 0 34px rgba(95, 167, 229, 0.48), 0 18px 38px rgba(7, 19, 46, 0.14)" : "0 12px 28px rgba(11, 23, 51, 0.12)",
+                              scale: isActive ? 1.025 : isBehindActive ? 0.978 : 0.99,
                               filter: isActive ? "blur(0px)" : isBehindActive ? "blur(3px)" : "blur(0px)",
                             }
                       }
@@ -384,10 +396,9 @@ const Hero = () => {
               <div className="hero-node-wrap">
                 <motion.div
                   className="hero-match-badge"
-                  key={`badge-${activeMatchIndex}`}
-                  initial={reduceMotion ? false : { opacity: 0, y: 6, scale: 0.96 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                  initial={false}
+                  animate={reduceMotion ? { opacity: 1, y: 0, scale: 1 } : { opacity: 1, y: 0, scale: [1, 1.045, 1] }}
+                  transition={{ duration: reduceMotion ? 0.5 : 2.2, repeat: reduceMotion ? 0 : Infinity, ease: "easeInOut" }}
                 >
                   <div className="text-3xl font-extrabold text-white">{activeMatch.score}%</div>
                   <div className="text-[11px] font-medium text-white/75 uppercase tracking-[0.24em]">

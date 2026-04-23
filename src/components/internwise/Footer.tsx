@@ -34,9 +34,8 @@ const Footer = () => {
           <div className="max-w-xl">
             <img src="/logo.png" alt="Internwise Europe" className="mb-6 h-14 w-auto" />
             <p className="text-sm leading-7 text-white/78">
-              Internwise is an online job board platform for the niche of internship recruitment.
-              Our vision is to help reducing youth unemployment rates by directly connecting
-              Employers and Candidates in Europe.
+              Internwise is an AI-powered matching platform connecting candidates and employers
+              across Europe.
             </p>
             <div className="mt-7">
               <h3 className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-white/70">

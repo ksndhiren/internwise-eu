@@ -261,7 +261,7 @@ All colors MUST be HSL.
   transform-origin: center right;
 }
 .hero-card-active {
-  border-color: hsl(209 73% 64% / 0.7);
+  border-color: hsl(209 90% 76% / 0.92);
   opacity: 1;
 }
 .hero-job-active {
@@ -317,10 +317,10 @@ All colors MUST be HSL.
   width: 112px;
   margin: 0 auto 0.9rem;
   border-radius: 9999px;
-  border: 1px solid hsl(209 73% 64% / 0.45);
-  background: hsl(218 56% 27% / 0.92);
+  border: 1px solid hsl(209 90% 78% / 0.62);
+  background: linear-gradient(160deg, hsl(218 58% 29% / 0.96), hsl(211 58% 38% / 0.94));
   padding: 1rem 0.5rem;
-  box-shadow: 0 0 40px rgba(95,167,229,0.32);
+  box-shadow: 0 0 0 1px rgba(164, 214, 255, 0.12), 0 0 46px rgba(95,167,229,0.44);
   position: relative;
   z-index: 11;
 }
@@ -337,11 +337,13 @@ All colors MUST be HSL.
   align-items: center;
   gap: 0.55rem;
   border-radius: 9999px;
-  border: 1px solid hsl(149 65% 63% / 0.28);
-  background: linear-gradient(90deg, hsl(149 55% 22% / 0.92), hsl(149 48% 30% / 0.92));
-  padding: 0.7rem 1.1rem;
+  border: 1px solid hsl(149 72% 68% / 0.42);
+  background: linear-gradient(90deg, hsl(149 55% 22% / 0.96), hsl(149 48% 32% / 0.96));
+  padding: 0.78rem 1.22rem;
   color: white;
-  box-shadow: 0 10px 30px rgba(16, 85, 58, 0.28);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  box-shadow: 0 0 0 1px rgba(116, 244, 181, 0.08), 0 10px 34px rgba(16, 85, 58, 0.36);
 }
 
 html { scroll-behavior: smooth; }
