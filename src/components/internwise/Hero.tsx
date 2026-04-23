@@ -171,7 +171,7 @@ const Hero = () => {
           </p>
           <div className="flex flex-wrap gap-4 mb-10">
             <Button size="lg" className="bg-primary-gradient text-white hover:opacity-95 rounded-xl px-6 h-12 shadow-card-soft border-0 group">
-              I'm a Candidate <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition" />
+              Start Matching <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition" />
             </Button>
             <Button size="lg" className="bg-cta-gradient text-white hover:opacity-95 rounded-xl px-6 h-12 shadow-cta border-0 group">
               I'm Hiring <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition" />

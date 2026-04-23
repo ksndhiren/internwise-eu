@@ -36,7 +36,7 @@ const FinalCta = () => {
         </h2>
         <div className="flex flex-wrap justify-center gap-4 mb-6">
           <Button size="lg" className="bg-primary-gradient text-white hover:opacity-95 rounded-xl px-7 h-12 shadow-card-soft border-0">
-            Find Internships <ArrowRight className="ml-2 w-4 h-4" />
+            Start Matching <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
           <Button size="lg" className="bg-cta-gradient text-white hover:opacity-95 rounded-xl px-7 h-12 shadow-cta border-0">
             Hire Talent <ArrowRight className="ml-2 w-4 h-4" />
