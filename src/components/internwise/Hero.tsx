@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Briefcase, Check, Code2, LineChart, Megaphone, Palette, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 import SeeYourMatchesDialog from "@/components/internwise/SeeYourMatchesDialog";
 import sofia from "@/assets/avatar-sofia.jpg";
 import lukas from "@/assets/avatar-lukas.jpg";
@@ -176,8 +177,10 @@ const Hero = () => {
                 See Your Matches <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition" />
               </Button>
             </SeeYourMatchesDialog>
-            <Button size="lg" className="bg-cta-gradient text-white hover:opacity-95 rounded-xl px-6 h-12 shadow-cta border-0 group">
-              I'm Hiring <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition" />
+            <Button asChild size="lg" className="bg-cta-gradient text-white hover:opacity-95 rounded-xl px-6 h-12 shadow-cta border-0 group">
+              <Link to="/employer-onboarding">
+                I'm Hiring <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition" />
+              </Link>
             </Button>
           </div>
           <div className="flex items-center gap-4">

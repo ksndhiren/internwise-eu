@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check, BarChart3, Rocket } from "lucide-react";
+import { Link } from "react-router-dom";
 import SeeYourMatchesDialog from "@/components/internwise/SeeYourMatchesDialog";
 import sofia from "@/assets/avatar-sofia.jpg";
 import lukas from "@/assets/avatar-lukas.jpg";
@@ -41,8 +42,10 @@ const FinalCta = () => {
               See Your Matches <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </SeeYourMatchesDialog>
-          <Button size="lg" className="bg-cta-gradient text-white hover:opacity-95 rounded-xl px-7 h-12 shadow-cta border-0">
-            Hire Talent <ArrowRight className="ml-2 w-4 h-4" />
+          <Button asChild size="lg" className="bg-cta-gradient text-white hover:opacity-95 rounded-xl px-7 h-12 shadow-cta border-0">
+            <Link to="/employer-onboarding">
+              Hire Talent <ArrowRight className="ml-2 w-4 h-4" />
+            </Link>
           </Button>
         </div>
         <div className="flex flex-wrap justify-center gap-6 text-sm text-white/70">
