@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useLayoutEffect } from "react";
 import { ArrowLeft, ArrowRight, Briefcase, Check, Download, ExternalLink, MapPin, MessageSquare, Sparkles, Star } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -22,6 +22,10 @@ const CandidateDetail = () => {
   const { candidateId } = useParams();
   const candidate = candidates.find((item) => item.id === candidateId);
   const { getEntry, shortlistCandidate, updateStatus } = useEmployerShortlist();
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!candidate) {
     return (
@@ -49,7 +53,7 @@ const CandidateDetail = () => {
 
   return (
     <main className="min-h-screen bg-slate-50">
-      <section className="relative overflow-hidden bg-hero-gradient px-4 pb-16 pt-8 text-white">
+      <section className="relative overflow-hidden bg-hero-gradient px-4 pb-28 pt-8 text-white md:pb-32">
         <div className="absolute inset-0 opacity-25" style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "46px 46px" }} />
         <div className="relative mx-auto max-w-7xl">
           <header className="flex items-center justify-between">
@@ -107,7 +111,7 @@ const CandidateDetail = () => {
         </div>
       </section>
 
-      <section className="mx-auto -mt-8 grid max-w-7xl gap-6 px-4 pb-20 lg:grid-cols-[1fr_0.34fr] lg:items-start">
+      <section className="relative z-10 mx-auto grid max-w-7xl gap-6 px-4 pb-20 pt-10 md:pt-12 lg:grid-cols-[1fr_0.34fr] lg:items-start">
         <div className="space-y-6">
           <SectionShell title="Why this candidate fits">
             <div className="grid gap-3">
