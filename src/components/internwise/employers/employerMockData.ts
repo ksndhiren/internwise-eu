@@ -29,6 +29,7 @@ export type Candidate = {
   avatar: string;
   role: string;
   location: string;
+  availability: string;
   score: number;
   skills: string[];
   reasons: string[];
@@ -58,7 +59,8 @@ export const candidates: Candidate[] = [
     name: "Sofia Lindstrom",
     avatar: sofia,
     role: "Product Analyst Intern",
-    location: "Berlin",
+    location: "Stockholm",
+    availability: "Immediate",
     score: 94,
     skills: ["Product Sense", "SQL", "Analytics"],
     reasons: [
@@ -108,7 +110,8 @@ export const candidates: Candidate[] = [
     name: "Lukas Schneider",
     avatar: lukas,
     role: "Junior Product Designer",
-    location: "Amsterdam",
+    location: "Berlin",
+    availability: "2 weeks",
     score: 91,
     skills: ["Figma", "UX Research", "Storytelling"],
     reasons: [
@@ -151,7 +154,8 @@ export const candidates: Candidate[] = [
     name: "Marta Rossi",
     avatar: marta,
     role: "Growth Marketing Intern",
-    location: "Paris",
+    location: "Milan",
+    availability: "Immediate",
     score: 88,
     skills: ["SEO", "Analytics", "Content"],
     reasons: [
@@ -190,11 +194,12 @@ export const candidates: Candidate[] = [
     },
   },
   {
-    id: "clara",
-    name: "Clara Dubois",
+    id: "emma",
+    name: "Emma Dubois",
     avatar: female1,
     role: "Frontend Intern",
-    location: "Remote",
+    location: "Paris",
+    availability: "Next month",
     score: 85,
     skills: ["React", "TypeScript", "Storytelling"],
     reasons: [
@@ -229,16 +234,17 @@ export const candidates: Candidate[] = [
     ],
     links: {
       cv: "#",
-      linkedin: "https://linkedin.com/in/clara-dubois",
-      portfolio: "https://portfolio.internwise-demo.com/clara",
+      linkedin: "https://linkedin.com/in/emma-dubois",
+      portfolio: "https://portfolio.internwise-demo.com/emma",
     },
   },
   {
-    id: "elias",
-    name: "Elias Novak",
+    id: "noah",
+    name: "Noah Jensen",
     avatar: male1,
     role: "Data Intern",
-    location: "Dublin",
+    location: "Copenhagen",
+    availability: "Immediate",
     score: 82,
     skills: ["Python", "SQL", "Analytics"],
     reasons: [
@@ -272,8 +278,52 @@ export const candidates: Candidate[] = [
     ],
     links: {
       cv: "#",
-      linkedin: "https://linkedin.com/in/elias-novak",
-      portfolio: "https://portfolio.internwise-demo.com/elias",
+      linkedin: "https://linkedin.com/in/noah-jensen",
+      portfolio: "https://portfolio.internwise-demo.com/noah",
+    },
+  },
+  {
+    id: "ana",
+    name: "Ana Garcia",
+    avatar: female1,
+    role: "Marketing Intern",
+    location: "Madrid",
+    availability: "3 weeks",
+    score: 79,
+    skills: ["Social Media", "Canva", "Copywriting"],
+    reasons: [
+      "Strong content instincts with hands-on campaign execution experience.",
+      "Clear fit for lean employer teams that need wide-scope marketing support.",
+    ],
+    fitBullets: [
+      "Strong visual and content execution gives her immediate value in brand-led internship roles.",
+      "Combines campaign support with practical copywriting and social media thinking.",
+      "A good match for employers hiring across Europe for fast-moving marketing support.",
+    ],
+    skillBands: {
+      strong: ["Social Media", "Canva", "Copywriting"],
+      basic: ["Analytics", "Content Planning", "Community Management"],
+      learning: ["CRM", "Performance Marketing"],
+    },
+    projects: [
+      {
+        title: "Creator campaign rollout",
+        meta: "Consumer startup internship",
+        detail: "Planned a lightweight creator campaign, wrote briefs, and supported weekly content review for launch week.",
+      },
+      {
+        title: "University social growth sprint",
+        meta: "Campus marketing project",
+        detail: "Improved engagement by redesigning social content structure, caption tone, and posting cadence.",
+      },
+    ],
+    gaps: [
+      "Would become more shortlist-ready with one clearer reporting case or campaign performance summary.",
+    ],
+    links: {
+      cv: "#",
+      linkedin: "https://linkedin.com/in/ana-garcia",
+      portfolio: "https://portfolio.internwise-demo.com/ana",
     },
   },
 ];

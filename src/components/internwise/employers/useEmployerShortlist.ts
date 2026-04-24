@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 
-export type ShortlistStatus = "new" | "contacted";
+export type ShortlistStatus = "new" | "contacted" | "awaiting_response" | "accepted_interest";
 
 export type ShortlistEntry = {
   candidateId: string;

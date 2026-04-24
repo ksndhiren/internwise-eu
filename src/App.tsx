@@ -14,6 +14,8 @@ const Privacy = lazy(() => import("./pages/Privacy.tsx"));
 const Contact = lazy(() => import("./pages/Contact.tsx"));
 const CandidateFaq = lazy(() => import("./pages/CandidateFaq.tsx"));
 const EmployerFaq = lazy(() => import("./pages/EmployerFaq.tsx"));
+const CandidateDashboard = lazy(() => import("./pages/CandidateDashboard.tsx"));
+const CandidateMatchDetail = lazy(() => import("./pages/CandidateMatchDetail.tsx"));
 const CandidateOnboarding = lazy(() => import("./pages/CandidateOnboarding.tsx"));
 const CandidateMatches = lazy(() => import("./pages/CandidateMatches.tsx"));
 const EmployerOnboarding = lazy(() => import("./pages/EmployerOnboarding.tsx"));
@@ -45,11 +47,15 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/candidate-faq" element={<CandidateFaq />} />
             <Route path="/employer-faq" element={<EmployerFaq />} />
+            <Route path="/candidate/dashboard" element={<CandidateDashboard />} />
+            <Route path="/candidate/matches/:id" element={<CandidateMatchDetail />} />
             <Route path="/candidate-onboarding" element={<CandidateOnboarding />} />
             <Route path="/candidate-matches" element={<CandidateMatches />} />
             <Route path="/employer-onboarding" element={<EmployerOnboarding />} />
             <Route path="/candidate-feed" element={<CandidateFeed />} />
+            <Route path="/employer/dashboard" element={<EmployerDashboard />} />
             <Route path="/employer-dashboard" element={<EmployerDashboard />} />
+            <Route path="/employer/candidates/:candidateId" element={<CandidateDetail />} />
             <Route path="/employer-dashboard/candidate/:candidateId" element={<CandidateDetail />} />
             <Route path="/shortlisted-candidates" element={<ShortlistedCandidates />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
