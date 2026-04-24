@@ -4,12 +4,12 @@ import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 const Footer = () => {
   const candidateLinks = [
     { label: "How it works", href: "/#how" },
-    { label: "FAQs", href: "https://www.internwise.eu/candidate-faq" },
+    { label: "FAQs", href: "/candidate-faq" },
   ];
 
   const employerLinks = [
     { label: "How it works", href: "/#how" },
-    { label: "FAQs", href: "https://www.internwise.eu/employer-faq" },
+    { label: "FAQs", href: "/employer-faq" },
   ];
 
   const legalLinks = [

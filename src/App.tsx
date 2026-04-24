@@ -12,6 +12,8 @@ const NotFound = lazy(() => import("./pages/NotFound.tsx"));
 const Terms = lazy(() => import("./pages/Terms.tsx"));
 const Privacy = lazy(() => import("./pages/Privacy.tsx"));
 const Contact = lazy(() => import("./pages/Contact.tsx"));
+const CandidateFaq = lazy(() => import("./pages/CandidateFaq.tsx"));
+const EmployerFaq = lazy(() => import("./pages/EmployerFaq.tsx"));
 const CandidateOnboarding = lazy(() => import("./pages/CandidateOnboarding.tsx"));
 const CandidateMatches = lazy(() => import("./pages/CandidateMatches.tsx"));
 const EmployerOnboarding = lazy(() => import("./pages/EmployerOnboarding.tsx"));
@@ -41,6 +43,8 @@ const App = () => (
             <Route path="/terms" element={<Terms />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/candidate-faq" element={<CandidateFaq />} />
+            <Route path="/employer-faq" element={<EmployerFaq />} />
             <Route path="/candidate-onboarding" element={<CandidateOnboarding />} />
             <Route path="/candidate-matches" element={<CandidateMatches />} />
             <Route path="/employer-onboarding" element={<EmployerOnboarding />} />
